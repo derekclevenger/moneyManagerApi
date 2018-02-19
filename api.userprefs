@@ -1,6 +1,13 @@
 ﻿<Properties StartupConfiguration="{7CFA36D8-F1D5-4055-A1F7-FB7F4047110B}|Default">
   <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/User.cs">
+    <Files>
+      <File FileName="api/Startup.cs" Line="8" Column="17" />
+      <File FileName="api/Model/ApplicationDbContext.cs" Line="8" Column="1" />
+      <File FileName="api/Controllers/UserController.cs" Line="6" Column="17" />
+      <File FileName="api/User.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
