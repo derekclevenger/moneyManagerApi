@@ -18,7 +18,7 @@ namespace api.Model
         }
 
         public DbSet<User> User { get; set; }
-
+        public DbSet<Categories> Category { get; set; }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    // Specify the path of the database here
@@ -28,12 +28,12 @@ namespace api.Model
 
     }
 
-    // Extension method used to add the middleware to the HTTP request pipeline.
-    public static class ApplicationDbContextExtensions
-    {
-        public static IApplicationBuilder UseMiddlewareClassTemplate(this IApplicationBuilder builder)
-        {
-            return builder.UseMiddleware<ApplicationDbContext>();
-        }
-    }
+    //// Extension method used to add the middleware to the HTTP request pipeline.
+    //public static class ApplicationDbContextExtensions
+    //{
+    //    public static IApplicationBuilder UseMiddlewareClassTemplate(this IApplicationBuilder builder)
+    //    {
+    //        return builder.UseMiddleware<ApplicationDbContext>();
+    //    }
+    //}
 }

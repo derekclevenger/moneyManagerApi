@@ -1,11 +1,14 @@
 ﻿<Properties StartupConfiguration="{7CFA36D8-F1D5-4055-A1F7-FB7F4047110B}|Default">
   <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/CategoryController.cs">
     <Files>
-      <File FileName="api/Startup.cs" Line="10" Column="40" />
-      <File FileName="api/Model/ApplicationDbContext.cs" Line="8" Column="1" />
-      <File FileName="api/Controllers/UserController.cs" Line="115" Column="48" />
-      <File FileName="api/User.cs" Line="3" Column="1" />
+      <File FileName="api/Startup.cs" Line="42" Column="1" />
+      <File FileName="api/Model/ApplicationDbContext.cs" Line="15" Column="44" />
+      <File FileName="api/Controllers/UserController.cs" Line="14" Column="3" />
+      <File FileName="api/User.cs" Line="7" Column="6" />
+      <File FileName="api/Program.cs" Line="22" Column="29" />
+      <File FileName="api/Categories.cs" Line="14" Column="9" />
+      <File FileName="api/Controllers/CategoryController.cs" Line="97" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

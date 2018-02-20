@@ -32,8 +32,13 @@ namespace api
             services.AddMvc();
 
 
-            var connection = @"server=cit-416.cvcozdifo215.us-east-2.rds.amazonaws.com;Initial Catalog=cit416;MultipleActiveResultSets=true;Integrated Security=False;User ID=root;Password=bObsBaby!2";
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
+            //the below works trying to make connection strings
+            //var connection = @"server=cit-416.cvcozdifo215.us-east-2.rds.amazonaws.com;Initial Catalog=cit416;MultipleActiveResultSets=true;Integrated Security=False;User ID=root;Password=bObsBaby!2";
+            //services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
+           
+            //Not working for the moment.
+            var connectionString = Configuration["DbContextSettings:connectionString"];
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -66,3 +71,4 @@ namespace api
         }
     }
 }
+
