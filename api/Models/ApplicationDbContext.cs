@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace api.Model
+namespace api.Models
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
     public class ApplicationDbContext : DbContext
