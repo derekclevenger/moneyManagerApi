@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{7CFA36D8-F1D5-4055-A1F7-FB7F4047110B}|Default">
   <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/TokenController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/ValuesController.cs">
     <Files>
-      <File FileName="api/App_Start/Startup.cs" Line="1" Column="29" />
+      <File FileName="api/App_Start/Startup.cs" Line="1" Column="1" />
       <File FileName="api/Models/ApplicationDbContext.cs" Line="16" Column="28" />
       <File FileName="api/Controllers/UserController.cs" Line="1" Column="1" />
       <File FileName="api/Models/User.cs" Line="1" Column="1" />
@@ -10,9 +10,8 @@
       <File FileName="api/Models/Categories.cs" Line="1" Column="1" />
       <File FileName="api/Controllers/CategoryController.cs" Line="8" Column="17" />
       <File FileName="api/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="api/appsettings.json" Line="20" Column="37" />
-      <File FileName="api/Controllers/ValuesController.cs" Line="14" Column="22" />
-      <File FileName="api/Controllers/TokenController.cs" Line="1" Column="1" />
+      <File FileName="api/appsettings.json" Line="1" Column="1" />
+      <File FileName="api/Controllers/ValuesController.cs" Line="14" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
