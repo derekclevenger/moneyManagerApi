@@ -57,6 +57,8 @@ namespace api
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                     };
              });
+
+
             services.AddMvc();
 
         }

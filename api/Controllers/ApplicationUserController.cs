@@ -6,29 +6,31 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
-    public class UserController : Controller
+    public class ApplicationUserController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public UserController(ApplicationDbContext context)
+        public ApplicationUserController(ApplicationDbContext context)
         {
             _context = context;
 
             if (_context.User.Count() == 0)
             {
-                _context.User.Add(new User { FirstName = "derek", LastName = "clevenger", Email = "pdc2189@icloud.com", Password = "bObsBaby!2" });
+                _context.User.Add(new ApplicationUser { FirstName = "derek", LastName = "clevenger", Email = "pdc2189@icloud.com", Password = "bObsBaby!2" });
                 _context.SaveChanges();
             }
         }
 
         [HttpGet]
-        public IEnumerable<User> GetAll()
+        public IEnumerable<ApplicationUser> GetAll()
         {
             return _context.User.ToList();
         }
@@ -45,7 +47,7 @@ namespace api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] User user)
+        public IActionResult Create([FromBody] ApplicationUser user)
         {
             if (user == null)
             {
@@ -61,7 +63,7 @@ namespace api.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] User UserToUpdate)
+        public IActionResult Update(int id, [FromBody] ApplicationUser UserToUpdate)
         {
             if (UserToUpdate == null && UserToUpdate.Id != id)
             {

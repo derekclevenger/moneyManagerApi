@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace api
 {
-    public class User
+    public class ApplicationUser
     {
         [Key]
         public int Id { get; set; }
