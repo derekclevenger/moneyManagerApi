@@ -54,7 +54,8 @@ namespace api.Controllers
                 return BadRequest();
             }
 
-            user.Password = HashPassword(user.Password);
+            user.Salt = Salted();
+            user.Password = HashPassword(user.Password, user.Salt);
 
             _context.User.Add(user);
             _context.SaveChanges();
@@ -76,10 +77,14 @@ namespace api.Controllers
                 return NotFound();
             }
 
+            if (!string.IsNullOrEmpty(UserToUpdate.Password))
+            {
+                user.Salt = Salted();
+                user.Password = HashPassword(UserToUpdate.Password, user.Salt);
+            }
             user.FirstName = (string.IsNullOrEmpty(UserToUpdate.FirstName)) ? user.FirstName : UserToUpdate.FirstName;
             user.LastName = (string.IsNullOrEmpty(UserToUpdate.LastName)) ? user.LastName : UserToUpdate.LastName;
             user.Email = (string.IsNullOrEmpty(UserToUpdate.Email)) ? user.Email : UserToUpdate.Email;
-            user.Password = (string.IsNullOrEmpty(UserToUpdate.Password)) ? user.Password : HashPassword(UserToUpdate.Password);
 
 
             _context.User.Update(user);
@@ -100,23 +105,26 @@ namespace api.Controllers
             _context.SaveChanges();
             return new NoContentResult();
         }
-
-        private string HashPassword(string password)
+        private byte[] Salted()
         {
-
             byte[] salt = new byte[128 / 8];
             using (var rng = RandomNumberGenerator.Create())
             {
                 rng.GetBytes(salt);
             }
+            return salt;
+        }
 
-            // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
+        private string HashPassword(string password, byte[] salt)
+        {
+             // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
             string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: password,
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA1,
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
+
 
             return hashed;
 

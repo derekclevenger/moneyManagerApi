@@ -26,5 +26,9 @@ namespace api
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Required")]
+        [Display(Name = "Salt")]
+        public byte[] Salt { get; set; }
+
     }
 }
