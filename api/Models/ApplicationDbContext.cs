@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api.Models
 {
-    // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -19,21 +18,6 @@ namespace api.Models
 
         public DbSet<ApplicationUser> User { get; set; }
         public DbSet<Categories> Category { get; set; }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    // Specify the path of the database here
-        //    //optionsBuilder.UseSqlite("Filename=./figuringOut.db");
-        //    optionsBuilder.UseSqlServer("name=connectionString");
-        //}
 
     }
-
-    //// Extension method used to add the middleware to the HTTP request pipeline.
-    //public static class ApplicationDbContextExtensions
-    //{
-    //    public static IApplicationBuilder UseMiddlewareClassTemplate(this IApplicationBuilder builder)
-    //    {
-    //        return builder.UseMiddleware<ApplicationDbContext>();
-    //    }
-    //}
 }
