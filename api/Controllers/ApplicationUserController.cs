@@ -57,6 +57,7 @@ namespace api.Controllers
             user.Salt = Salted();
             user.Password = HashPassword(user.Password, user.Salt);
 
+
             _context.User.Add(user);
             _context.SaveChanges();
 

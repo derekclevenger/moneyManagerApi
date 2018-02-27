@@ -18,6 +18,8 @@ namespace api.Models
 
         public DbSet<ApplicationUser> User { get; set; }
         public DbSet<Categories> Category { get; set; }
+        public DbSet<Account> Account { get; set; }
+        public DbSet<Transaction> Transaction { get; set; }
 
     }
 }

@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{7CFA36D8-F1D5-4055-A1F7-FB7F4047110B}|Default">
   <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/TokenController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/AccountController.cs">
     <Files>
       <File FileName="api/App_Start/Startup.cs" Line="60" Column="13" />
-      <File FileName="api/Models/ApplicationDbContext.cs" Line="16" Column="28" />
-      <File FileName="api/Controllers/UserController.cs" Line="26" Column="29" />
-      <File FileName="api/Models/ApplicationUser.cs" Line="5" Column="33" />
+      <File FileName="api/Models/ApplicationDbContext.cs" Line="21" Column="51" />
+      <File FileName="api/Models/ApplicationUser.cs" Line="32" Column="1" />
       <File FileName="api/App_Start/Program.cs" Line="21" Column="1" />
       <File FileName="api/Models/Categories.cs" Line="1" Column="1" />
-      <File FileName="api/Controllers/CategoryController.cs" Line="8" Column="17" />
+      <File FileName="api/Controllers/CategoryController.cs" Line="99" Column="10" />
       <File FileName="api/appsettings.json" Line="20" Column="37" />
-      <File FileName="api/Controllers/ValuesController.cs" Line="10" Column="1" />
-      <File FileName="api/Controllers/TokenController.cs" Line="11" Column="5" />
+      <File FileName="api/Controllers/ApplicationUserController.cs" Line="95" Column="1" />
+      <File FileName="api/Models/Account.cs" Line="17" Column="43" />
+      <File FileName="api/Controllers/AccountController.cs" Line="97" Column="29" />
+      <File FileName="api/Models/Transactions.cs" Line="29" Column="46" />
+      <File FileName="api/Controllers/TransactionsController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
