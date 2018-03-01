@@ -58,16 +58,6 @@ namespace api.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        //private ApplicationUser Authenticate(Login login)
-        //{
-        //    ApplicationUser user = null;
-
-        //    if (login.Email == "pdc2189@icloud.com" && login.Password == "bObsBaby!2")
-        //    {
-        //        user = new ApplicationUser { };
-        //    }
-        //    return user;
-        //}
 
         private ApplicationUser Authenticate(Login login)
         {

@@ -61,6 +61,7 @@ namespace api.Controllers
             _context.User.Add(user);
             _context.SaveChanges();
 
+            //TODO from here need to send this to authentication model
             return CreatedAtRoute("GetUser", new { id = user.Id }, user);
         }
 
