@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using api.Models;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,16 +18,20 @@ namespace api.Controllers
     [Route("api/[controller]")]
     public class TokenController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
         private IConfiguration _config;
 
-        public TokenController(IConfiguration config)
+
+        public TokenController(IConfiguration config, ApplicationDbContext context)
         {
             _config = config;
+            _context = context;
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult CreateToken([FromBody]LoginModel login)
+        public IActionResult CreateToken([FromBody]Login login)
         {
             IActionResult response = Unauthorized();
             var user = Authenticate(login);
@@ -52,22 +58,54 @@ namespace api.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        private ApplicationUser Authenticate(LoginModel login)
+        //private ApplicationUser Authenticate(Login login)
+        //{
+        //    ApplicationUser user = null;
+
+        //    if (login.Email == "pdc2189@icloud.com" && login.Password == "bObsBaby!2")
+        //    {
+        //        user = new ApplicationUser { };
+        //    }
+        //    return user;
+        //}
+
+        private ApplicationUser Authenticate(Login login)
         {
             ApplicationUser user = null;
-
-            if (login.Email == "pdc2189@icloud.com" && login.Password == "bObsBaby!2")
+            //var user = _context.User.FirstOrDefault(t => t.Email == login.Email);
+             user = _context.User.FirstOrDefault(x => x.Email == login.Email);
+            if (user == null)
             {
-                user = new ApplicationUser { };
+                return user;
+            }
+
+            if (user.Email == login.Email)
+            {
+                if (HashPassword(login.Password, user.Salt) == user.Password)
+                {
+                    return user;
+
+                }
             }
             return user;
         }
 
+        private string HashPassword(string password, byte[] salt)
+        {
+            // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: password,
+                salt: salt,
+                prf: KeyDerivationPrf.HMACSHA1,
+                iterationCount: 10000,
+                numBytesRequested: 256 / 8));
+
+
+            return hashed;
+
+        }
+
     }
 
-    public class LoginModel
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
-    }
+   
 }

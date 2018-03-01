@@ -19,3 +19,4 @@
 /Users/paulclevenger/Sites/cit416-api/api/obj/Debug/netcoreapp2.0/api.AssemblyInfo.cs
 /Users/paulclevenger/Sites/cit416-api/api/obj/Debug/netcoreapp2.0/api.dll
 /Users/paulclevenger/Sites/cit416-api/api/obj/Debug/netcoreapp2.0/api.pdb
+/Users/paulclevenger/Sites/cit416-api/api/obj/Debug/netcoreapp2.0/api.csprojResolveAssemblyReference.cache
