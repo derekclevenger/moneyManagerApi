@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using Microsoft.AspNetCore.Authorization;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace api.Controllers
 {
@@ -46,6 +45,7 @@ namespace api.Controllers
             return new ObjectResult(user);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Create([FromBody] ApplicationUser user)
         {

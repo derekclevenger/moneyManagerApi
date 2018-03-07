@@ -11,7 +11,6 @@ using Microsoft.IdentityModel.Tokens;
 using api.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace api.Controllers
 {
@@ -62,7 +61,6 @@ namespace api.Controllers
         private ApplicationUser Authenticate(Login login)
         {
             ApplicationUser user = null;
-            //var user = _context.User.FirstOrDefault(t => t.Email == login.Email);
              user = _context.User.FirstOrDefault(x => x.Email == login.Email);
             if (user == null)
             {

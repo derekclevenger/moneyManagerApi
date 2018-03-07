@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Models;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace api.Controllers
 {
@@ -12,36 +12,80 @@ namespace api.Controllers
     [Route("api/[controller]")]
     public class BudgetController : Controller
     {
-        // GET: api/values
+        private readonly ApplicationDbContext _context;
+
+        public BudgetController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Budget> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            return _context.Budget.ToList();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{userId}", Name = "GetBudgets")]
+        public IActionResult GetById(int userId)
         {
-            return "value";
+            var budgets = _context.Budget.Where(x => x.UserId == userId).ToList();
+            if (budgets == null)
+            {
+                return NotFound();
+            }
+            return new ObjectResult(budgets);
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Create([FromBody] Budget budget)
         {
+            if (budget == null)
+            {
+                return BadRequest();
+            }
+
+            _context.Budget.Add(budget);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("GetBudget", new { id = budget.Id }, budget);
         }
 
-        // PUT api/values/5
+
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Update(int id, [FromBody] Budget BudgetToUpdate)
         {
+            if (BudgetToUpdate == null && BudgetToUpdate.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var budget = _context.Budget.FirstOrDefault(t => t.Id == id);
+            if (budget == null)
+            {
+                return NotFound();
+            }
+
+            budget.Amount = BudgetToUpdate.Amount != 0 ? BudgetToUpdate.Amount : budget.Amount;
+            budget.UserId = BudgetToUpdate.UserId;
+            budget.Category = (string.IsNullOrEmpty(BudgetToUpdate.Category)) ? budget.Category : BudgetToUpdate.Category;
+
+            _context.Budget.Update(budget);
+            _context.SaveChanges();
+            return new NoContentResult();
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var budget = _context.Budget.FirstOrDefault(t => t.Id == id);
+            if (budget == null)
+            {
+                return NotFound();
+            }
+
+            _context.Budget.Remove(budget);
+            _context.SaveChanges();
+            return new NoContentResult();
         }
     }
 }
