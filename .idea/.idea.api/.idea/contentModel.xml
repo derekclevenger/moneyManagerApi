@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2018.1/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_api.-502510122.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="api" t="IncludeRecursive">
+        <e p="api.csproj" t="IncludeRecursive" />
+        <e p="App_Start" t="Include">
+          <e p="Program.cs" t="Include" />
+          <e p="Startup.cs" t="Include" />
+        </e>
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="ApplicationUserController.cs" t="Include" />
+          <e p="BudgetController.cs" t="Include" />
+          <e p="CategoryController.cs" t="Include" />
+          <e p="TokenController.cs" t="Include" />
+          <e p="TransactionsController.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Account.cs" t="Include" />
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="ApplicationUser.cs" t="Include" />
+          <e p="Budget.cs" t="Include" />
+          <e p="Categories.cs" t="Include" />
+          <e p="Login.cs" t="Include" />
+          <e p="Transaction.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="wwwroot" t="Include" />
+      </e>
+      <e p="api.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -49,7 +49,19 @@ namespace api
                     };
              });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                                  builder =>
+                                 {
+                                     builder.AllowAnyOrigin();
+                                     builder.AllowAnyHeader();
+                                     builder.AllowAnyMethod();
+                                       builder.WithHeaders("accept", "content-type", "origin", "x-custom-header");
+                                     builder.AllowCredentials();
 
+                                 });
+            });
             services.AddMvc();
 
         }
@@ -71,6 +83,15 @@ namespace api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API");
             });
 
+            app.UseCors(builder =>
+             {
+                builder.AllowAnyOrigin();
+                 builder.AllowAnyHeader();
+                 builder.AllowAnyMethod();
+                 builder.WithHeaders("accept", "content-type", "origin", "x-custom-header");
+                 builder.AllowCredentials();
+
+             });
 
             app.UseMvc();
         }

@@ -7,11 +7,12 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Cors;
 
 namespace api.Controllers
 {
-    [Authorize]
+    [EnableCors("AllowAllOrigins")]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class ApplicationUserController : Controller
     {

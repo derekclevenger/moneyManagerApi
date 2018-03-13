@@ -149,15 +149,6 @@
           "lib/netstandard1.6/Microsoft.AI.DependencyCollector.dll": {}
         }
       },
-      "Microsoft.AspNet.Cors/5.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Cors.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Cors.dll": {}
-        }
-      },
       "Microsoft.AspNet.WebApi.Client/5.2.4": {
         "type": "package",
         "dependencies": {
@@ -2711,20 +2702,6 @@
           "lib/net451/Microsoft.Owin.dll": {}
         }
       },
-      "Microsoft.Owin.Cors/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Cors": "5.0.0",
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Cors.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Cors.dll": {}
-        }
-      },
       "Microsoft.Owin.Security/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5112,16 +5089,6 @@
         "lib/netstandard1.6/Microsoft.AI.DependencyCollector.xml",
         "microsoft.applicationinsights.dependencycollector.2.4.1.nupkg.sha512",
         "microsoft.applicationinsights.dependencycollector.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.Cors/5.0.0": {
-      "sha512": "jNwFhEnm0jRlaRCgHEk52hJQltVoM2Bllysv2NtPYrgsVWyS3r5BOtCXkM/lEZ5AdUUBOvha+4QAVcVp1MZp5g==",
-      "type": "package",
-      "path": "microsoft.aspnet.cors/5.0.0",
-      "files": [
-        "lib/net45/System.Web.Cors.dll",
-        "microsoft.aspnet.cors.5.0.0.nupkg.sha512",
-        "microsoft.aspnet.cors.nuspec"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.4": {
@@ -7629,17 +7596,6 @@
         "lib/net451/Microsoft.Owin.dll",
         "microsoft.owin.4.0.0.nupkg.sha512",
         "microsoft.owin.nuspec"
-      ]
-    },
-    "Microsoft.Owin.Cors/4.0.0": {
-      "sha512": "eHEqyQbLgDCu2sg1H5iEh5syKGHk0X3wBkwrkLQ0mrEkr73F2/b3NtswdI+99QmECrqN4UXZmoIIjOdy/miZLw==",
-      "type": "package",
-      "path": "microsoft.owin.cors/4.0.0",
-      "files": [
-        "lib/net451/Microsoft.Owin.Cors.XML",
-        "lib/net451/Microsoft.Owin.Cors.dll",
-        "microsoft.owin.cors.4.0.0.nupkg.sha512",
-        "microsoft.owin.cors.nuspec"
       ]
     },
     "Microsoft.Owin.Security/4.0.0": {
@@ -13105,7 +13061,6 @@
       "Microsoft.AspNet.WebApi.Owin >= 5.2.4",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.Owin.Cors >= 4.0.0",
       "Microsoft.Owin.Security.Jwt >= 4.0.0",
       "Microsoft.Owin.Security.OAuth >= 4.0.0",
       "MvcCodeRouting.Web.Http >= 1.1.0",
@@ -13124,7 +13079,7 @@
       "projectName": "api",
       "projectPath": "/Users/paulclevenger/Sites/cit416-api/api/api.csproj",
       "packagesPath": "/Users/paulclevenger/.nuget/packages/",
-      "outputPath": "/Users/paulclevenger/Sites/cit416-api/api/obj",
+      "outputPath": "/Users/paulclevenger/Sites/cit416-api/api/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -13152,59 +13107,55 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Swashbuckle.AspNetCore.SwaggerGen": {
-            "target": "Package",
-            "version": "1.2.0"
-          },
-          "Swashbuckle.AspNetCore.SwaggerUI": {
-            "target": "Package",
-            "version": "1.2.0"
-          },
-          "Microsoft.Owin.Security.OAuth": {
-            "target": "Package",
-            "version": "4.0.0"
-          },
-          "Microsoft.Owin.Cors": {
-            "target": "Package",
-            "version": "4.0.0"
-          },
-          "Microsoft.AspNet.WebApi.Core": {
-            "target": "Package",
-            "version": "5.2.4"
-          },
-          "Microsoft.AspNet.WebApi.Owin": {
-            "target": "Package",
-            "version": "5.2.4"
-          },
-          "Microsoft.Owin.Security.Jwt": {
-            "target": "Package",
-            "version": "4.0.0"
-          },
           "Auth0.OpenIdConnectSigningKeyResolver": {
             "target": "Package",
-            "version": "1.0.0"
-          },
-          "MvcCodeRouting.Web.Http": {
-            "target": "Package",
-            "version": "1.1.0"
+            "version": "[1.0.0, )"
           },
           "IdentityServer4": {
             "target": "Package",
-            "version": "2.1.2"
+            "version": "[2.1.2, )"
           },
           "JWT": {
             "target": "Package",
-            "version": "3.1.1"
+            "version": "[3.1.1, )"
+          },
+          "Microsoft.AspNet.WebApi.Core": {
+            "target": "Package",
+            "version": "[5.2.4, )"
+          },
+          "Microsoft.AspNet.WebApi.Owin": {
+            "target": "Package",
+            "version": "[5.2.4, )"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
+          },
+          "Microsoft.Owin.Security.Jwt": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Microsoft.Owin.Security.OAuth": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "MvcCodeRouting.Web.Http": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerGen": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerUI": {
+            "target": "Package",
+            "version": "[1.2.0, )"
           }
         },
         "imports": [
@@ -13222,16 +13173,6 @@
       "warningLevel": 1,
       "message": "Package 'Auth0.OpenIdConnectSigningKeyResolver 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Auth0.OpenIdConnectSigningKeyResolver",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.Cors 5.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.AspNet.Cors",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
       ]
@@ -13262,16 +13203,6 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Owin 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Owin.Cors 4.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Owin.Cors",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
       ]
