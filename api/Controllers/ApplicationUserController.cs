@@ -22,18 +22,30 @@ namespace api.Controllers
         {
             _context = context;
 
-            if (_context.User.Count() == 0)
-            {
-                _context.User.Add(new ApplicationUser { FirstName = "derek", LastName = "clevenger", Email = "pdc2189@icloud.com", Password = "bObsBaby!2" });
-                _context.SaveChanges();
-            }
+           
         }
 
-        [HttpGet]
-        public IEnumerable<ApplicationUser> GetAll()
+        [HttpPost ("{id}")]
+        public IActionResult GetAuthenticatedUser(int id, [FromBody] Login login)
         {
-            return _context.User.ToList();
+            ApplicationUser user = null;
+            user = _context.User.FirstOrDefault(x => x.Email == login.Email);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            if (user.Email == login.Email)
+            {
+                if (HashPassword(login.Password, user.Salt) == user.Password)
+                {
+                    return new ObjectResult(user);
+
+                }
+            }
+            return new ObjectResult(user);
         }
+
 
         [HttpGet("{id}", Name = "GetUser")]
         public IActionResult GetById(int id)

@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{C0E56686-C245-4AC0-B731-A5C88130DAD8}|Default">
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/TokenController.cs">
+    <Files>
+      <File FileName="Controllers/ApplicationUserController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/TokenController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

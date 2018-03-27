@@ -10,10 +10,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using api.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-
+using Microsoft.AspNetCore.Cors;
 
 namespace api.Controllers
 {
+    [AllowAnonymous]
+   
+    [EnableCors("AllowAllOrigins")]
     [Route("api/[controller]")]
     public class TokenController : Controller
     {
@@ -69,13 +72,14 @@ namespace api.Controllers
 
             if (user.Email == login.Email)
             {
-                if (HashPassword(login.Password, user.Salt) == user.Password)
+                var loginPassword = HashPassword(login.Password, user.Salt);
+                if ( loginPassword == user.Password)
                 {
                     return user;
 
                 }
             }
-            return user;
+            return null;
         }
 
         private string HashPassword(string password, byte[] salt)

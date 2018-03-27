@@ -8,20 +8,20 @@
       <File FileName="api/Models/Categories.cs" Line="1" Column="1" />
       <File FileName="api/Controllers/CategoryController.cs" Line="11" Column="1" />
       <File FileName="api/appsettings.json" Line="20" Column="37" />
-      <File FileName="api/Controllers/ApplicationUserController.cs" Line="66" Column="1" />
+      <File FileName="api/Controllers/ApplicationUserController.cs" Line="28" Column="19" />
       <File FileName="api/Models/Transaction.cs" Line="31" Column="46" />
       <File FileName="api/Controllers/TransactionsController.cs" Line="8" Column="1" />
-      <File FileName="api/Controllers/TokenController.cs" Line="14" Column="1" />
+      <File FileName="api/Controllers/TokenController.cs" Line="35" Column="1" />
       <File FileName="api/Models/Login.cs" Line="14" Column="109" />
-      <File FileName="api/App_Start/Startup.cs" Line="92" Column="45" />
+      <File FileName="api/App_Start/Startup.cs" Line="29" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/paulclevenger/Sites/cit416-api/api/Controllers/ApplicationUserController.cs" relfile="api/Controllers/ApplicationUserController.cs" line="66" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../api/Controllers/TokenController.cs" line="33" offsetX="524" offsetY="480" expression="login.Email" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MultiItemStartupConfigurations />
 </Properties>
