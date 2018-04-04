@@ -22,12 +22,6 @@ namespace api.Controllers
         public AccountController(ApplicationDbContext context)
         {
             _context = context;
-
-            //if (_context.Account.Count() == 0) 
-            //{ 
-            //    _context.Account.Add(new Account {Amount = 100.00M , Type = "check", UserId = 26}); 
-            //    _context.SaveChanges(); 
-            //} 
         }
 
 
@@ -59,7 +53,6 @@ namespace api.Controllers
             _context.Account.Add(account);
             _context.SaveChanges();
 
-            //return CreatedAtRoute("GetAccounts", new { id = account.Id }, account);
             return new ObjectResult(account);
 
         }

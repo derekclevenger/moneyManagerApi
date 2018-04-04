@@ -70,10 +70,11 @@ namespace api.Controllers
             {
                 return user;
             }
+            var salt = new Salt();
 
             if (user.Email == login.Email)
             {
-                var loginPassword = HashPassword(login.Password, user.Salt);
+                var loginPassword = salt.HashPassword(login.Password, user.Salt);
                 if ( loginPassword == user.Password)
                 {
                     return user;
@@ -83,20 +84,7 @@ namespace api.Controllers
             return null;
         }
 
-        private string HashPassword(string password, byte[] salt)
-        {
-            // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
-            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA1,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8));
-
-
-            return hashed;
-
-        }
+       
 
     }
 

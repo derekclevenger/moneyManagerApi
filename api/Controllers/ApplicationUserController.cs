@@ -17,11 +17,11 @@ namespace api.Controllers
     public class ApplicationUserController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly Salt _salt;
 
         public ApplicationUserController(ApplicationDbContext context)
         {
             _context = context;
-
            
         }
 
@@ -37,7 +37,7 @@ namespace api.Controllers
 
             if (user.Email == login.Email)
             {
-                if (HashPassword(login.Password, user.Salt) == user.Password)
+                if (_salt.HashPassword(login.Password, user.Salt) == user.Password)
                 {
                     return new ObjectResult(user);
 
@@ -68,8 +68,8 @@ namespace api.Controllers
                 return BadRequest();
             }
 
-            user.Salt = Salted();
-            user.Password = HashPassword(user.Password, user.Salt);
+            user.Salt = _salt.Salted();
+            user.Password = _salt.HashPassword(user.Password, user.Salt);
             user.Email = user.Email.ToLower();
 
             _context.User.Add(user);
@@ -94,8 +94,8 @@ namespace api.Controllers
 
             if (!string.IsNullOrEmpty(UserToUpdate.Password))
             {
-                user.Salt = Salted();
-                user.Password = HashPassword(UserToUpdate.Password, user.Salt);
+                user.Salt = _salt.Salted();
+                user.Password = _salt.HashPassword(UserToUpdate.Password, user.Salt);
             }
             user.FirstName = (string.IsNullOrEmpty(UserToUpdate.FirstName)) ? user.FirstName : UserToUpdate.FirstName;
             user.LastName = (string.IsNullOrEmpty(UserToUpdate.LastName)) ? user.LastName : UserToUpdate.LastName;
@@ -120,29 +120,6 @@ namespace api.Controllers
             _context.SaveChanges();
             return new NoContentResult();
         }
-        private byte[] Salted()
-        {
-            byte[] salt = new byte[128 / 8];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
-            return salt;
-        }
-
-        private string HashPassword(string password, byte[] salt)
-        {
-             // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
-            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA1,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8));
-
-
-            return hashed;
-
-        }
+       
     }
 }
