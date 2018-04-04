@@ -58,6 +58,7 @@ namespace api.Controllers
             return new ObjectResult(user);
         }
 
+        [EnableCors("AllowAllOrigins")]
         [AllowAnonymous]
         [HttpPost]
         public IActionResult Create([FromBody] ApplicationUser user)
@@ -69,12 +70,11 @@ namespace api.Controllers
 
             user.Salt = Salted();
             user.Password = HashPassword(user.Password, user.Salt);
-
+            user.Email = user.Email.ToLower();
 
             _context.User.Add(user);
             _context.SaveChanges();
 
-            //TODO from here need to send this to authentication model
             return CreatedAtRoute("GetUser", new { id = user.Id }, user);
         }
 

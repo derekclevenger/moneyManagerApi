@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace api.Controllers
 {
+    [EnableCors("AllowAllOrigins")]
+    [Authorize]
     [Route("api/[controller]")]
     public class TransactionsController : Controller
     {
@@ -23,13 +27,13 @@ namespace api.Controllers
         [HttpGet]
         public IEnumerable<Transaction> GetAll()
         {
-            return _context.Transaction.ToList();
+            return _context.Transactions.ToList();
         }
 
         [HttpGet("{userId}", Name = "GetTransactions")]
         public IActionResult GetById(int userId)
         {
-            var transactions = _context.Transaction.Where(x => x.UserId == userId).ToList();
+            var transactions = _context.Transactions.Where(x => x.UserId == userId).ToList();
             if (transactions == null)
             {
                 return NotFound();
@@ -44,11 +48,10 @@ namespace api.Controllers
             {
                 return BadRequest();
             }
-
-            _context.Transaction.Add(transaction);
+            _context.Transactions.Add(transaction);
             _context.SaveChanges();
 
-            return CreatedAtRoute("GetCategory", new { id = transaction.Id }, transaction);
+            return new ObjectResult(transaction);
         }
 
 
@@ -60,7 +63,7 @@ namespace api.Controllers
                 return BadRequest();
             }
 
-            var transaction = _context.Transaction.FirstOrDefault(t => t.Id == id);
+            var transaction = _context.Transactions.FirstOrDefault(t => t.Id == id);
             if (transaction == null)
             {
                 return NotFound();
@@ -72,7 +75,7 @@ namespace api.Controllers
             transaction.Category = (string.IsNullOrEmpty(TransactionToUpdate.Category)) ? transaction.Category : TransactionToUpdate.Category;
             transaction.TransactionDate = new DateTime();
 
-            _context.Transaction.Update(transaction);
+            _context.Transactions.Update(transaction);
             _context.SaveChanges();
             return new NoContentResult();
         }
@@ -81,13 +84,13 @@ namespace api.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var transaction = _context.Transaction.FirstOrDefault(t => t.Id == id);
+            var transaction = _context.Transactions.FirstOrDefault(t => t.Id == id);
             if (transaction == null)
             {
                 return NotFound();
             }
 
-            _context.Transaction.Remove(transaction);
+            _context.Transactions.Remove(transaction);
             _context.SaveChanges();
             return new NoContentResult();
         }

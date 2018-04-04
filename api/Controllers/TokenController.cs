@@ -64,7 +64,8 @@ namespace api.Controllers
         private ApplicationUser Authenticate(Login login)
         {
             ApplicationUser user = null;
-             user = _context.User.FirstOrDefault(x => x.Email == login.Email);
+            login.Email = login.Email.ToLower();
+            user = _context.User.FirstOrDefault(x => x.Email == login.Email);
             if (user == null)
             {
                 return user;

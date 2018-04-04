@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace api.Controllers
 {
+    [EnableCors("AllowAllOrigins")]
     [Authorize]
     [Route("api/[controller]")]
     public class AccountController : Controller
@@ -21,11 +23,11 @@ namespace api.Controllers
         {
             _context = context;
 
-            if (_context.Account.Count() == 0)
-            {
-                _context.Account.Add(new Account {Amount = 100.00M });
-                _context.SaveChanges();
-            }
+            //if (_context.Account.Count() == 0) 
+            //{ 
+            //    _context.Account.Add(new Account {Amount = 100.00M , Type = "check", UserId = 26}); 
+            //    _context.SaveChanges(); 
+            //} 
         }
 
 
@@ -53,11 +55,13 @@ namespace api.Controllers
             {
                 return BadRequest();
             }
-
+            account.Amount = (decimal)account.Amount;
             _context.Account.Add(account);
             _context.SaveChanges();
 
-            return CreatedAtRoute("GetCategory", new { id = account.Id }, account);
+            //return CreatedAtRoute("GetAccounts", new { id = account.Id }, account);
+            return new ObjectResult(account);
+
         }
 
 

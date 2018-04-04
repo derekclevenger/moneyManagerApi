@@ -9,6 +9,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.Web.Http.Cors;
 
 namespace api
 {
@@ -49,6 +50,7 @@ namespace api
                     };
              });
 
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
@@ -57,11 +59,10 @@ namespace api
                                      builder.AllowAnyOrigin();
                                      builder.AllowAnyHeader();
                                      builder.AllowAnyMethod();
-                                       builder.WithHeaders("accept", "content-type", "origin", "x-custom-header");
-                                     builder.AllowCredentials();
 
                                  });
             });
+
             services.AddMvc();
 
         }
@@ -88,9 +89,6 @@ namespace api
                 builder.AllowAnyOrigin();
                  builder.AllowAnyHeader();
                  builder.AllowAnyMethod();
-                 builder.WithHeaders("accept", "content-type", "origin", "x-custom-header");
-                 builder.AllowCredentials();
-
              });
 
             app.UseMvc();
