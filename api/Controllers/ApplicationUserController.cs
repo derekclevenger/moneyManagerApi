@@ -17,7 +17,6 @@ namespace api.Controllers
     public class ApplicationUserController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly Salt _salt;
 
         public ApplicationUserController(ApplicationDbContext context)
         {
@@ -34,7 +33,7 @@ namespace api.Controllers
             {
                 return NotFound();
             }
-
+            var _salt = new Salt();
             if (user.Email == login.Email)
             {
                 if (_salt.HashPassword(login.Password, user.Salt) == user.Password)
@@ -63,6 +62,8 @@ namespace api.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] ApplicationUser user)
         {
+            var _salt = new Salt();
+
             if (user == null)
             {
                 return BadRequest();
@@ -81,6 +82,8 @@ namespace api.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] ApplicationUser UserToUpdate)
         {
+            var _salt = new Salt();
+
             if (UserToUpdate == null && UserToUpdate.Id != id)
             {
                 return BadRequest();
