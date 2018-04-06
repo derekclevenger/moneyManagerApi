@@ -21,7 +21,7 @@ namespace api.Models
         public decimal Amount { get; set; }
 
         [Required(ErrorMessage = "Required")]
-        public int AccountId { get; set; }
+        public string AccountType { get; set; }
 
         [Required(ErrorMessage = "Required")]
         public int UserId { get; set; }
