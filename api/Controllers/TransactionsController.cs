@@ -73,11 +73,11 @@ namespace api.Controllers
             transaction.Payee = (string.IsNullOrEmpty(TransactionToUpdate.Payee)) ? transaction.Payee : TransactionToUpdate.Payee;
             transaction.UserId = TransactionToUpdate.UserId;
             transaction.Category = (string.IsNullOrEmpty(TransactionToUpdate.Category)) ? transaction.Category : TransactionToUpdate.Category;
-            transaction.TransactionDate = new DateTime();
+            transaction.TransactionDate = TransactionToUpdate.TransactionDate;
 
             _context.Transactions.Update(transaction);
             _context.SaveChanges();
-            return new NoContentResult();
+            return new ObjectResult(transaction);
         }
 
 

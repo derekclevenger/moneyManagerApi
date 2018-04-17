@@ -1,5 +1,5 @@
-/Users/paulclevenger/Sites/cit416-api/api
+/Users/derekclevenger/Documents/cit416-api/api
 --output-path=obj/Debug/netcoreapp2.0/
 --application-name=api
---content-root=/Users/paulclevenger/Sites/cit416-api/api
+--content-root=/Users/derekclevenger/Documents/cit416-api/api
 --file=

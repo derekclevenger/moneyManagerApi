@@ -1,24 +1,27 @@
 ﻿<Properties StartupConfiguration="{7CFA36D8-F1D5-4055-A1F7-FB7F4047110B}|Default">
   <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/ApplicationUserController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="api/Controllers/TransactionsController.cs">
     <Files>
-      <File FileName="api/Models/ApplicationDbContext.cs" Line="23" Column="50" />
-      <File FileName="api/Models/ApplicationUser.cs" Line="32" Column="1" />
-      <File FileName="api/App_Start/Program.cs" Line="21" Column="1" />
-      <File FileName="api/Models/Categories.cs" Line="1" Column="1" />
-      <File FileName="api/Controllers/CategoryController.cs" Line="11" Column="1" />
-      <File FileName="api/appsettings.json" Line="20" Column="37" />
-      <File FileName="api/Controllers/ApplicationUserController.cs" Line="28" Column="19" />
-      <File FileName="api/Models/Transaction.cs" Line="31" Column="46" />
-      <File FileName="api/Controllers/TransactionsController.cs" Line="8" Column="1" />
-      <File FileName="api/Controllers/TokenController.cs" Line="35" Column="1" />
-      <File FileName="api/Models/Login.cs" Line="14" Column="109" />
-      <File FileName="api/App_Start/Startup.cs" Line="29" Column="1" />
+      <File FileName="api/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName=".vs/api/xs/UserPrefs.xml" Line="1" Column="1" />
+      <File FileName=".idea/.idea.api/.idea/workspace.xml" Line="16" Column="30" />
+      <File FileName="api/Controllers/BudgetController.cs" Line="1" Column="1" />
+      <File FileName="api/Models/Budget.cs" Line="1" Column="1" />
+      <File FileName="api/Models/Account.cs" Line="1" Column="1" />
+      <File FileName="api/Models/Transaction.cs" Line="1" Column="1" />
+      <File FileName="api/Controllers/TransactionsController.cs" Line="1" Column="1" />
+      <File FileName="api/Controllers/CategoryController.cs" Line="1" Column="1" />
+      <File FileName="api/Controllers/ApplicationUserController.cs" Line="1" Column="1" />
+      <File FileName="api/Controllers/AccountController.cs" Line="1" Column="1" />
+      <File FileName="api/Controllers/TokenController.cs" Line="1" Column="1" />
+      <File FileName="api/App_Start/Startup.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/derekclevenger/Documents/cit416-api/api/Controllers/TransactionsController.cs" relfile="api/Controllers/TransactionsController.cs" line="78" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../../api/Controllers/TokenController.cs" line="33" offsetX="524" offsetY="480" expression="login.Email" liveUpdate="False" />

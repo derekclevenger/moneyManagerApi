@@ -20,3 +20,14 @@
 /Users/paulclevenger/Sites/cit416-api/api/obj/Debug/netcoreapp2.0/api.dll
 /Users/paulclevenger/Sites/cit416-api/api/obj/Debug/netcoreapp2.0/api.pdb
 /Users/paulclevenger/Sites/cit416-api/api/obj/Debug/netcoreapp2.0/api.csprojResolveAssemblyReference.cache
+/Users/derekclevenger/Documents/cit416-api/api/bin/Debug/netcoreapp2.0/api.deps.json
+/Users/derekclevenger/Documents/cit416-api/api/bin/Debug/netcoreapp2.0/api.runtimeconfig.json
+/Users/derekclevenger/Documents/cit416-api/api/bin/Debug/netcoreapp2.0/api.runtimeconfig.dev.json
+/Users/derekclevenger/Documents/cit416-api/api/bin/Debug/netcoreapp2.0/api.dll
+/Users/derekclevenger/Documents/cit416-api/api/bin/Debug/netcoreapp2.0/api.pdb
+/Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.csprojResolveAssemblyReference.cache
+/Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.csproj.CoreCompileInputs.cache
+/Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.AssemblyInfoInputs.cache
+/Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.AssemblyInfo.cs
+/Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.dll
+/Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.pdb
