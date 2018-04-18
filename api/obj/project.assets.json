@@ -13113,23 +13113,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/derekclevenger/.nuget/packages/": {},
+    "/Users/derek/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/derekclevenger/Documents/cit416-api/api/api.csproj",
+      "projectUniqueName": "/Volumes/DerekSD/CIT416/cit416-api/api/api.csproj",
       "projectName": "api",
-      "projectPath": "/Users/derekclevenger/Documents/cit416-api/api/api.csproj",
-      "packagesPath": "/Users/derekclevenger/.nuget/packages/",
-      "outputPath": "/Users/derekclevenger/Documents/cit416-api/api/obj",
+      "projectPath": "/Volumes/DerekSD/CIT416/cit416-api/api/api.csproj",
+      "packagesPath": "/Users/derek/.nuget/packages/",
+      "outputPath": "/Volumes/DerekSD/CIT416/cit416-api/api/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/derekclevenger/.config/NuGet/NuGet.Config"
+        "/Users/derek/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13151,59 +13151,58 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Swashbuckle.AspNetCore.SwaggerGen": {
-            "target": "Package",
-            "version": "1.2.0"
-          },
-          "Swashbuckle.AspNetCore.SwaggerUI": {
-            "target": "Package",
-            "version": "1.2.0"
-          },
-          "Microsoft.Owin.Security.OAuth": {
-            "target": "Package",
-            "version": "4.0.0"
-          },
-          "Microsoft.AspNet.WebApi.Core": {
-            "target": "Package",
-            "version": "5.2.4"
-          },
-          "Microsoft.AspNet.WebApi.Owin": {
-            "target": "Package",
-            "version": "5.2.4"
-          },
-          "Microsoft.Owin.Security.Jwt": {
-            "target": "Package",
-            "version": "4.0.0"
-          },
           "Auth0.OpenIdConnectSigningKeyResolver": {
             "target": "Package",
-            "version": "1.0.0"
-          },
-          "MvcCodeRouting.Web.Http": {
-            "target": "Package",
-            "version": "1.1.0"
+            "version": "[1.0.0, )"
           },
           "IdentityServer4": {
             "target": "Package",
-            "version": "2.1.2"
+            "version": "[2.1.2, )"
           },
           "JWT": {
             "target": "Package",
-            "version": "3.1.1"
+            "version": "[3.1.1, )"
+          },
+          "Microsoft.AspNet.WebApi.Core": {
+            "target": "Package",
+            "version": "[5.2.4, )"
           },
           "Microsoft.AspNet.WebApi.Cors": {
             "target": "Package",
-            "version": "5.2.4"
+            "version": "[5.2.4, )"
+          },
+          "Microsoft.AspNet.WebApi.Owin": {
+            "target": "Package",
+            "version": "[5.2.4, )"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
+          },
+          "Microsoft.Owin.Security.Jwt": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Microsoft.Owin.Security.OAuth": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "MvcCodeRouting.Web.Http": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerGen": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerUI": {
+            "target": "Package",
+            "version": "[1.2.0, )"
           }
         },
         "imports": [

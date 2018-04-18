@@ -74,6 +74,7 @@ namespace api.Controllers
             transaction.UserId = TransactionToUpdate.UserId;
             transaction.Category = (string.IsNullOrEmpty(TransactionToUpdate.Category)) ? transaction.Category : TransactionToUpdate.Category;
             transaction.TransactionDate = TransactionToUpdate.TransactionDate;
+            transaction.AccountType = TransactionToUpdate.AccountType;
 
             _context.Transactions.Update(transaction);
             _context.SaveChanges();

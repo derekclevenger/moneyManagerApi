@@ -31,3 +31,14 @@
 /Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.AssemblyInfo.cs
 /Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.dll
 /Users/derekclevenger/Documents/cit416-api/api/obj/Debug/netcoreapp2.0/api.pdb
+/Volumes/DerekSD/CIT416/cit416-api/api/bin/Debug/netcoreapp2.0/api.deps.json
+/Volumes/DerekSD/CIT416/cit416-api/api/bin/Debug/netcoreapp2.0/api.runtimeconfig.json
+/Volumes/DerekSD/CIT416/cit416-api/api/bin/Debug/netcoreapp2.0/api.runtimeconfig.dev.json
+/Volumes/DerekSD/CIT416/cit416-api/api/bin/Debug/netcoreapp2.0/api.dll
+/Volumes/DerekSD/CIT416/cit416-api/api/bin/Debug/netcoreapp2.0/api.pdb
+/Volumes/DerekSD/CIT416/cit416-api/api/obj/Debug/netcoreapp2.0/api.csprojResolveAssemblyReference.cache
+/Volumes/DerekSD/CIT416/cit416-api/api/obj/Debug/netcoreapp2.0/api.csproj.CoreCompileInputs.cache
+/Volumes/DerekSD/CIT416/cit416-api/api/obj/Debug/netcoreapp2.0/api.AssemblyInfoInputs.cache
+/Volumes/DerekSD/CIT416/cit416-api/api/obj/Debug/netcoreapp2.0/api.AssemblyInfo.cs
+/Volumes/DerekSD/CIT416/cit416-api/api/obj/Debug/netcoreapp2.0/api.dll
+/Volumes/DerekSD/CIT416/cit416-api/api/obj/Debug/netcoreapp2.0/api.pdb
