@@ -1,18 +1,13 @@
 ﻿<Properties StartupConfiguration="{C0E56686-C245-4AC0-B731-A5C88130DAD8}|Default">
   <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Transaction.cs">
     <Files>
-      <File FileName="Controllers/ApplicationUserController.cs" Line="86" Column="13" />
-      <File FileName="Controllers/TokenController.cs" Line="75" Column="43" />
-      <File FileName="Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="Models/Transaction.cs" Line="35" Column="1" />
-      <File FileName="Controllers/BudgetController.cs" Line="1" Column="1" />
-      <File FileName="Models/ApplicationUser.cs" Line="1" Column="1" />
-      <File FileName="Models/Account.cs" Line="1" Column="1" />
-      <File FileName="Controllers/TransactionsController.cs" Line="40" Column="14" />
-      <File FileName="Models/Salt.cs" Line="17" Column="10" />
-      <File FileName="App_Start/Startup.cs" Line="31" Column="21" />
-      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="Controllers/TransactionsController.cs" Line="66" Column="25" />
+      <File FileName="Controllers/BudgetController.cs" Line="14" Column="36" />
+      <File FileName="Controllers/CategoryController.cs" Line="16" Column="32" />
+      <File FileName="Models/Expenditures.cs" Line="10" Column="9" />
+      <File FileName="Models/Login.cs" Line="18" Column="6" />
+      <File FileName="Models/Transaction.cs" Line="7" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

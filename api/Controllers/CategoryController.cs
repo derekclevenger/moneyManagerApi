@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Cors;
 
 namespace api.Controllers
 {
+    [EnableCors("AllowAllOrigins")]
     [Authorize]
     [Route("api/[controller]")]
     public class CategoryController : Controller
@@ -20,12 +21,6 @@ namespace api.Controllers
         public CategoryController(ApplicationDbContext context)
         {
             _context = context;
-
-            if (_context.Category.Count() == 0)
-            {
-                _context.Category.Add(new Categories { Category = "Groceries" });
-                _context.SaveChanges();
-            }
         }
 
         [HttpGet]
@@ -58,7 +53,7 @@ namespace api.Controllers
             _context.Category.Add(category);
             _context.SaveChanges();
 
-            return CreatedAtRoute("GetCategory", new { id = category.Id }, category);
+            return new ObjectResult(category);
         }
 
         [HttpPut("{id}")]

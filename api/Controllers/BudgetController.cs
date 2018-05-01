@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace api.Controllers
 {
     //TODO implement CRUD for BUDGET
-    [Route("api/[controller]")]
+    [EnableCors("AllowAllOrigins")]
+    [Authorize]
+    [Route("api/[controller]/[action]")]
     public class BudgetController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -19,14 +23,17 @@ namespace api.Controllers
             _context = context;
         }
 
+
         [HttpGet]
+        [ActionName("GetAll")]
         public IEnumerable<Budget> GetAll()
         {
             return _context.Budget.ToList();
         }
 
-        [HttpGet("{userId}", Name = "GetBudgets")]
-        public IActionResult GetById(int userId)
+        [HttpGet("{userId}", Name = "GetByUser")]
+        [ActionName("GetByUser")]
+        public IActionResult GetByUserId(int userId)
         {
             var budgets = _context.Budget.Where(x => x.UserId == userId).ToList();
             if (budgets == null)
@@ -36,8 +43,20 @@ namespace api.Controllers
             return new ObjectResult(budgets);
         }
 
+        [HttpGet("{Id}", Name = "GetById")]
+        [ActionName("GetById")]
+        public IActionResult GetById(int Id)
+        {
+            var budget = _context.Budget.Where(x => x.Id == Id);
+            if (budget == null)
+            {
+                return NotFound();
+            }
+            return new ObjectResult(budget);
+        }
+
         [HttpPost]
-        public IActionResult Create([FromBody] Budget budget)
+        public IActionResult AddBudget([FromBody] Budget budget)
         {
             if (budget == null)
             {
@@ -47,12 +66,12 @@ namespace api.Controllers
             _context.Budget.Add(budget);
             _context.SaveChanges();
 
-            return CreatedAtRoute("GetBudget", new { id = budget.Id }, budget);
+            return new ObjectResult(budget);
         }
 
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] Budget BudgetToUpdate)
+        public IActionResult UpdateBudget(int id, [FromBody] Budget BudgetToUpdate)
         {
             if (BudgetToUpdate == null && BudgetToUpdate.Id != id)
             {
@@ -75,7 +94,7 @@ namespace api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteBudget(int id)
         {
             var budget = _context.Budget.FirstOrDefault(t => t.Id == id);
             if (budget == null)

@@ -18,5 +18,8 @@ namespace api.Models
 
         [Required(ErrorMessage = "Required")]
         public int UserId { get; set; }
+
+        [Required(ErrorMessage = "Required")]
+        public bool Monthly { get; set; }
     }
 }
